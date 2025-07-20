@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompting Guides</title>
     
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Feather Icons for simple icons -->
+
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-        /* Custom styles from main page for consistency */
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a14; /* Dark blue-black background */
-            color: #cdd6f4; /* Softer text color */
+            background-color: #0a0a14;
+            color: #cdd6f4;
         }
         .royal-blue-gradient {
             background-image: linear-gradient(to right, #4f46e5, #2563eb);
@@ -37,13 +37,13 @@
         .nav-link {
             @apply text-slate-300 hover:text-white transition-colors duration-200;
         }
-        /* Active nav link style */
+
         .nav-link.active {
             @apply text-white font-semibold;
         }
         pre {
-            background-color: #11111b; /* Darker code background */
-            border: 1px solid #313244; /* Subtle border */
+            background-color: #11111b;
+            border: 1px solid #313244;
             border-radius: 0.5rem;
             padding: 1rem;
             overflow-x: auto;
@@ -51,10 +51,10 @@
             font-size: 0.875rem;
         }
         .prompt-bad {
-            border-left: 4px solid #f38ba8; /* Red for bad */
+            border-left: 4px solid #f38ba8;
         }
         .prompt-good {
-            border-left: 4px solid #a6e3a1; /* Green for good */
+            border-left: 4px solid #a6e3a1;
         }
         #back-to-top {
             @apply hidden fixed bottom-5 right-5 p-3 rounded-full transition-all duration-300;
@@ -67,26 +67,26 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
+
     <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Assuming index.html is the homepage -->
+
             <a href="index.html" class="text-2xl font-bold text-white">
                 ABC<span class="royal-blue-text-gradient">-AI</span>
             </a>
             <div class="hidden md:flex items-center space-x-8">
-                <!-- Update links to point to the correct pages -->
+
                 <a href="guides.html" class="nav-link active">Guides</a>
                 <a href="examples.html" class="nav-link">Examples</a>
                 <a href="engineering.html" class="nav-link">Engineering</a>
                 <a href="tools.html" class="nav-link">Tools</a>
             </div>
-             <!-- Mobile Menu Button -->
+
             <button id="mobile-menu-button" class="md:hidden text-white">
                 <i data-feather="menu"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
+
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="guides.html" class="block py-2 nav-link active">Guides</a>
             <a href="examples.html" class="block py-2 nav-link">Examples</a>
@@ -96,7 +96,7 @@
     </header>
 
     <main>
-        <!-- Guides Page Header -->
+
         <section class="py-20 md:py-24 text-center relative overflow-hidden">
             <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
             <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -108,11 +108,11 @@
             </div>
         </section>
 
-        <!-- Detailed Guides Section -->
+
         <section id="detailed-guides" class="py-20 bg-[#11111b]">
             <div class="container mx-auto px-6 space-y-16">
 
-                <!-- Guide 1: The Art of the Prompt -->
+
                 <div class="card lg:p-10">
                     <i data-feather="edit-3" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">1. The Art of the Prompt: Clarity & Specificity</h2>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
 
-                <!-- Guide 2: Define a Persona -->
+
                 <div class="card lg:p-10">
                     <i data-feather="users" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">2. Define a Persona: The Power of Role-Playing</h2>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
 
-                <!-- Guide 3: Provide Rich Context -->
+
                 <div class="card lg:p-10">
                     <i data-feather="file-text" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">3. Provide Rich Context: Give the AI What It Needs</h2>
@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 
-                <!-- Guide 4: Iterate and Refine -->
+
                 <div class="card lg:p-10">
                     <i data-feather="refresh-cw" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">4. Iterate and Refine: The Conversation is Key</h2>
@@ -184,7 +184,7 @@
                     </div>
                 </div>
                 
-                <!-- Advanced Prompting Techniques Section -->
+
                 <div class="pt-16">
                     <div class="text-center mb-16">
                          <h1 class="text-4xl md:text-5xl font-extrabold text-white">Advanced Prompting Techniques</h1>
@@ -201,7 +201,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+
     <footer class="bg-[#0a0a14] border-t border-[#313244]/50">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
             <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
@@ -209,23 +209,23 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+
     <a href="#header" id="back-to-top" class="text-white">
         <i data-feather="arrow-up"></i>
     </a>
 
     <script>
-        // Initialize Feather Icons
+
         feather.replace();
 
-        // --- Mobile Menu Toggle ---
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Back to Top Button Visibility ---
+
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {

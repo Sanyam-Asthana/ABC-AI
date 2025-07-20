@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Tools - ABC-AI</title>
     
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Feather Icons for simple icons -->
+
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-        /* Custom styles from main page for consistency */
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a14; /* Dark blue-black background */
-            color: #cdd6f4; /* Softer text color */
+            background-color: #0a0a14;
+            color: #cdd6f4;
         }
         .royal-blue-gradient {
             background-image: linear-gradient(to right, #4f46e5, #2563eb);
@@ -37,7 +37,7 @@
         .nav-link {
             @apply text-slate-300 hover:text-white transition-colors duration-200;
         }
-        /* Active nav link style */
+
         .nav-link.active {
             @apply text-white font-semibold;
         }
@@ -45,10 +45,10 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
+
     <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Link this back to your main page, assuming it's index.html -->
+
             <a href="index.html" class="text-2xl font-bold text-white">
                 ABC<span class="royal-blue-text-gradient">-AI</span>
             </a>
@@ -58,12 +58,12 @@
                 <a href="engineering.html" class="nav-link">Engineering</a>
                 <a href="tools.html" class="nav-link">Tools</a>
             </div>
-             <!-- Mobile Menu Button -->
+
             <button id="mobile-menu-button" class="md:hidden text-white">
                 <i data-feather="menu"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
+
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="guides.html" class="block py-2 nav-link">Guides</a>
             <a href="examples.html" class="block py-2 nav-link">Examples</a>
@@ -73,7 +73,7 @@
     </header>
 
     <main>
-        <!-- Tools Page Header -->
+
         <section class="py-20 md:py-24 text-center relative overflow-hidden">
             <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
             <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -85,7 +85,7 @@
             </div>
         </section>
 
-        <!-- Search and Filter -->
+
         <section class="py-8 bg-[#11111b]">
             <div class="container mx-auto px-6">
                 <div class="relative max-w-2xl mx-auto">
@@ -97,11 +97,11 @@
             </div>
         </section>
 
-        <!-- Tools Grid -->
+
         <section id="tools-grid" class="py-20">
             <div class="container mx-auto px-6">
 
-                <!-- Category: LLM & Chat -->
+
                 <div class="mb-16 tool-category">
                     <h2 class="text-2xl font-bold text-white mb-6">Large Language Models & Chat</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tool-list">
@@ -123,7 +123,7 @@
                     </div>
                 </div>
 
-                <!-- Category: Image & Video Generation -->
+
                 <div class="mb-16 tool-category">
                     <h2 class="text-2xl font-bold text-white mb-6">Image & Video Generation</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tool-list">
@@ -145,7 +145,7 @@
                     </div>
                 </div>
 
-                <!-- Category: Productivity & Writing -->
+
                 <div class="mb-16 tool-category">
                     <h2 class="text-2xl font-bold text-white mb-6">Productivity & Writing</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tool-list">
@@ -167,7 +167,7 @@
                     </div>
                 </div>
                 
-                 <!-- No Results Message -->
+
                 <div id="no-results" class="hidden text-center py-10">
                     <h3 class="text-2xl font-bold text-white">No tools found</h3>
                     <p class="text-slate-400 mt-2">Try adjusting your search term.</p>
@@ -177,7 +177,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+
     <footer class="bg-[#11111b] border-t border-[#313244]/50">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
             <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
@@ -186,17 +186,17 @@
     </footer>
 
     <script>
-        // Initialize Feather Icons
+
         feather.replace();
 
-        // --- Mobile Menu Toggle ---
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Real-time Search Functionality ---
+
         const searchInput = document.getElementById('tool-search');
         const toolItems = document.querySelectorAll('.tool-item');
         const toolCategories = document.querySelectorAll('.tool-category');

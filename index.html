@@ -8,23 +8,23 @@
      <meta name="theme-color" content="#2e5ef0">
     <title>ABC-AI</title>
     
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Feather Icons for simple icons -->
+
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-        /* Custom styles */
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a14; /* Dark blue-black background */
-            color: #cdd6f4; /* Softer text color */
+            background-color: #0a0a14;
+            color: #cdd6f4;
         }
         .royal-blue-gradient {
             background-image: linear-gradient(to right, #4f46e5, #2563eb);
@@ -34,10 +34,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        /* Style for the code blocks */
+
         pre {
-            background-color: #11111b; /* Darker code background */
-            border: 1px solid #313244; /* Subtle border */
+            background-color: #11111b;
+            border: 1px solid #313244;
             border-radius: 0.5rem;
             padding: 1rem;
             overflow-x: auto;
@@ -64,7 +64,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
+
     <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-white">
@@ -79,12 +79,12 @@
             <a href="#tools" class="hidden md:inline-block royal-blue-gradient text-white font-semibold px-5 py-2 rounded-lg transition-shadow hover:shadow-lg hover:shadow-blue-500/50">
                 Explore Tools
             </a>
-            <!-- Mobile Menu Button -->
+
             <button id="mobile-menu-button" class="md:hidden text-white">
                 <i data-feather="menu"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
+
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#guides" class="block py-2 nav-link">Guides</a>
             <a href="#examples" class="block py-2 nav-link">Examples</a>
@@ -95,7 +95,7 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+
         <section id="home" class="py-20 md:py-32 relative overflow-hidden">
              <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
              <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -115,31 +115,31 @@
             </div>
         </section>
 
-        <!-- Prompting Guides Section -->
+
         <section id="guides" class="py-20 bg-[#11111b]">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Beginner's Prompting Guides</h2>
                 <br>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Guide 1 -->
+
                     <div class="card">
                         <i data-feather="edit-3" class="w-10 h-10 text-blue-400 mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">The Art of the Prompt</h3>
                         <p class="text-slate-400">Learn to write clear, concise, and effective prompts. Be specific, provide context, and state your desired format.</p>
                     </div>
-                    <!-- Guide 2 -->
+
                     <div class="card">
                         <i data-feather="users" class="w-10 h-10 text-blue-400 mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Define a Persona</h3>
                         <p class="text-slate-400">Assign the AI a role (e.g., "You are a senior software developer") to frame its knowledge and response style.</p>
                     </div>
-                    <!-- Guide 3 -->
+
                     <div class="card">
                         <i data-feather="file-text" class="w-10 h-10 text-blue-400 mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Provide Rich Context</h3>
                         <p class="text-slate-400">Give the AI background info, examples, and constraints. The more it knows, the better its output will be.</p>
                     </div>
-                     <!-- Guide 4 -->
+
                     <div class="card">
                         <i data-feather="refresh-cw" class="w-10 h-10 text-blue-400 mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Iterate and Refine</h3>
@@ -154,12 +154,12 @@
             </center>
         </section>
 
-        <!-- Prompting Examples Section -->
+
         <section id="examples" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Practical Prompt Examples</h2>
                 <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Example 1: Creative Writing -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-4">Creative Writing Assistant</h3>
                         <p class="text-slate-400 mb-4">Generate a short story opening.</p>
@@ -170,7 +170,7 @@
                             </button>
                         </div>
                     </div>
-                    <!-- Example 2: Coding -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-4">Python Code Generator</h3>
                         <p class="text-slate-400 mb-4">Create a Python function to fetch data from an API.</p>
@@ -181,7 +181,7 @@
                             </button>
                         </div>
                     </div>
-                     <!-- Example 3: Marketing Copy -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-4">Marketing Copywriter</h3>
                         <p class="text-slate-400 mb-4">Generate ad copy for a new product.</p>
@@ -192,7 +192,7 @@
                             </button>
                         </div>
                     </div>
-                    <!-- Example 4: Summarization -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-4">Text Summarizer</h3>
                         <p class="text-slate-400 mb-4">Summarize a long article into key points.</p>
@@ -214,12 +214,12 @@
             </center>
         </section>
 
-        <!-- Prompt Engineering Section -->
+
         <section id="engineering" class="py-20 bg-[#11111b]">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Advanced Prompt Engineering</h2>
                 <div class="grid lg:grid-cols-3 gap-8 items-start">
-                    <!-- Few-Shot Prompting -->
+
                     <div class="card">
                         <h3 class="text-2xl font-bold text-white mb-4">Few-Shot Prompting</h3>
                         <p class="text-slate-400 mb-4">Guide the AI by providing a few examples of the input-output format you want. This helps it understand the task better than a zero-shot (no examples) prompt.</p>
@@ -233,7 +233,7 @@ cheese =></code></pre>
                             </button>
                         </div>
                     </div>
-                    <!-- Chain-of-Thought Prompting -->
+
                     <div class="card">
                         <h3 class="text-2xl font-bold text-white mb-4">Chain-of-Thought (CoT)</h3>
                         <p class="text-slate-400 mb-4">Encourage the AI to "think step by step" to solve complex problems, leading to more accurate and reasoned answers.</p>
@@ -250,7 +250,7 @@ The answer is 11.</code></pre>
                             </button>
                         </div>
                     </div>
-                    <!-- Self-Consistency -->
+
                     <div class="card">
                         <h3 class="text-2xl font-bold text-white mb-4">Self-Consistency</h3>
                         <p class="text-slate-400 mb-4">Generate multiple Chain-of-Thought responses for a complex question and choose the most common answer to improve accuracy and reliability.</p>
@@ -265,12 +265,12 @@ The answer is 11.</code></pre>
             </div>
         </section>
 
-        <!-- AI Tools Section -->
+
         <section id="tools" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Curated AI Tools</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Tool 1 -->
+
                     <div class="card flex flex-col">
                         <h3 class="text-xl font-bold text-white mb-2">Google AI Studio</h3>
                         <p class="text-slate-400 flex-grow">Directly access and experiment with powerful models like Gemini 2.5 Pro for a wide range of applications.</p>
@@ -278,7 +278,7 @@ The answer is 11.</code></pre>
                             Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
                         </a>
                     </div>
-                    <!-- Tool 2 -->
+
                     <div class="card flex flex-col">
                         <h3 class="text-xl font-bold text-white mb-2">Midjourney</h3>
                         <p class="text-slate-400 flex-grow">A premier AI image generator known for creating artistic and high-quality visuals from text prompts.</p>
@@ -286,7 +286,7 @@ The answer is 11.</code></pre>
                             Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
                         </a>
                     </div>
-                    <!-- Tool 3 -->
+
                     <div class="card flex flex-col">
                         <h3 class="text-xl font-bold text-white mb-2">Perplexity AI</h3>
                         <p class="text-slate-400 flex-grow">A conversational search engine that provides direct answers with cited sources, blending search with LLMs.</p>
@@ -294,7 +294,7 @@ The answer is 11.</code></pre>
                             Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
                         </a>
                     </div>
-                     <!-- Tool 4 -->
+
                     <div class="card flex flex-col">
                         <h3 class="text-xl font-bold text-white mb-2">Hugging Face</h3>
                         <p class="text-slate-400 flex-grow">The leading open-source community and platform for AI. Find models, datasets, and tools.</p>
@@ -302,7 +302,7 @@ The answer is 11.</code></pre>
                             Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
                         </a>
                     </div>
-                     <!-- Tool 5 -->
+
                     <div class="card flex flex-col">
                         <h3 class="text-xl font-bold text-white mb-2">ElevenLabs</h3>
                         <p class="text-slate-400 flex-grow">Generate high-quality, natural-sounding speech and voiceovers from text in multiple languages.</p>
@@ -310,7 +310,7 @@ The answer is 11.</code></pre>
                             Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
                         </a>
                     </div>
-                     <!-- Tool 6 -->
+
                     <div class="card flex flex-col">
                         <h3 class="text-xl font-bold text-white mb-2">Notion AI</h3>
                         <p class="text-slate-400 flex-grow">An AI writing assistant integrated directly into the Notion workspace to summarize, write, and brainstorm.</p>
@@ -328,7 +328,7 @@ The answer is 11.</code></pre>
         </section>
     </main>
 
-    <!-- Footer -->
+
     <footer class="bg-[#11111b] border-t border-[#313244]/50">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
             <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
@@ -336,28 +336,28 @@ The answer is 11.</code></pre>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+
     <a href="#home" id="back-to-top" class="text-white">
         <i data-feather="arrow-up"></i>
     </a>
 
     <script>
-        // Initialize Feather Icons
+
         feather.replace();
 
-        // --- Mobile Menu Toggle ---
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Copy to Clipboard Functionality ---
+
         function copyToClipboard(elementId, button) {
             const codeElement = document.getElementById(elementId);
             let textToCopy = codeElement.innerText;
             
-            // A simple way to handle the "Paste article here" part
+
             if (textToCopy.includes('[Paste article text here]')) {
                 textToCopy = textToCopy.replace('[Paste article text here]', '...');
             }
@@ -375,7 +375,7 @@ The answer is 11.</code></pre>
             });
         }
 
-        // --- Back to Top Button Visibility ---
+
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {

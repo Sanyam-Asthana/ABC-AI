@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Examples - ABC-AI</title>
     
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://css.gg/css?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Feather Icons for simple icons -->
+
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-        /* Custom styles from main page for consistency */
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a14; /* Dark blue-black background */
-            color: #cdd6f4; /* Softer text color */
+            background-color: #0a0a14;
+            color: #cdd6f4;
         }
         .royal-blue-gradient {
             background-image: linear-gradient(to right, #4f46e5, #2563eb);
@@ -38,8 +38,8 @@
             @apply text-white font-semibold;
         }
         pre {
-            background-color: #11111b; /* Darker code background */
-            border: 1px solid #313244; /* Subtle border */
+            background-color: #11111b;
+            border: 1px solid #313244;
             border-radius: 0.5rem;
             padding: 1rem;
             overflow-x: auto;
@@ -48,8 +48,8 @@
             position: relative;
         }
         .prompt-output {
-            background-color: #1e1e2c; /* Slightly different background for output */
-            border-left: 4px solid #89b4fa; /* Blue for output */
+            background-color: #1e1e2c;
+            border-left: 4px solid #89b4fa;
             margin-top: 0.5rem;
             padding: 1rem;
             border-radius: 0.5rem;
@@ -66,7 +66,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
+
     <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-white">
@@ -91,7 +91,7 @@
     </header>
 
     <main>
-        <!-- Examples Page Header -->
+
         <section class="py-20 md:py-24 text-center relative overflow-hidden">
             <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
             <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -103,7 +103,7 @@
             </div>
         </section>
 
-        <!-- Basic Prompt Examples -->
+
         <section id="basic-examples" class="py-20 bg-[#11111b]">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -111,7 +111,7 @@
                      <p class="mt-3 text-lg text-slate-400 max-w-2xl mx-auto">Everyday use-cases that show the power of clear, direct instructions.</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Creative Writing -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-2">Creative Writing</h3>
                         <p class="text-slate-400 mb-4">Generate a character description for a fantasy novel.</p>
@@ -122,7 +122,7 @@
                         <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
                         <pre class="prompt-output"><code>Kaelen moves like a shadow, a whisper in the crowded streets of Blackhaven. His face, often obscured by a deep cowl, holds sharp, angular features and eyes the color of a stormy sea. He wears practical, dark leather armor, scuffed and worn from countless narrow escapes. Strapped to his back is not a sword, but a wicked-looking hand-crossbow, its wooden stock polished smooth by his grip. It's said he was once a member of the Royal Assassins, but no one dares ask if the rumors are true.</code></pre>
                     </div>
-                    <!-- Email Drafting -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-2">Email Drafting</h3>
                         <p class="text-slate-400 mb-4">Draft a professional follow-up email after a job interview.</p>
@@ -145,7 +145,7 @@ Best regards,
 
 Alex Chen</code></pre>
                     </div>
-                     <!-- Text Summarization -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-2">Text Summarization</h3>
                         <p class="text-slate-400 mb-4">Summarize a complex topic into simple terms.</p>
@@ -160,7 +160,7 @@ Because everyone has a copy, it's incredibly secure. If someone tries to secretl
 
 This shared, secure notebook is the basic idea behind blockchain. It's a way to record transactions or information in a transparent and tamper-proof way, without needing a central authority like a bank to verify everything.</code></pre>
                     </div>
-                    <!-- Code Generation -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-2">Code Generation</h3>
                         <p class="text-slate-400 mb-4">Generate a JavaScript function for a common web task.</p>
@@ -187,7 +187,7 @@ function isValidEmail(email) {
             </div>
         </section>
 
-        <!-- Advanced Prompting Examples -->
+
         <section id="advanced-examples" class="py-20">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-16">
@@ -195,7 +195,7 @@ function isValidEmail(email) {
                      <p class="mt-3 text-lg text-slate-400 max-w-2xl mx-auto">Applying structured techniques to solve more complex problems.</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Few-Shot for Data Formatting -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-2">Few-Shot: Data Formatting</h3>
                         <p class="text-slate-400 mb-4">Teach the AI to convert unstructured data into a clean JSON format.</p>
@@ -215,7 +215,7 @@ JSON:</code></pre>
                         <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
                         <pre class="prompt-output"><code>{ "name": "David Lee", "email": "d.lee@inbox.org" }</code></pre>
                     </div>
-                    <!-- Chain-of-Thought for Problem Solving -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-2">Chain-of-Thought: Logic Puzzle</h3>
                         <p class="text-slate-400 mb-4">Guide the AI to solve a multi-step logic problem.</p>
@@ -244,7 +244,7 @@ The answer is to follow these steps.</code></pre>
     6. Pour from 5-gallon to 3-gallon (until 3-gallon is full - uses 1 gallon from 5-gallon).
     7. 5-gallon jug now contains 4 gallons.</code></pre>
                     </div>
-                     <!-- Persona with Constraints -->
+
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-2">Persona with Constraints: Socratic Tutor</h3>
                         <p class="text-slate-400 mb-4">Create an AI tutor that guides the user to the answer instead of giving it directly.</p>
@@ -260,7 +260,7 @@ The answer is to follow these steps.</code></pre>
         </section>
     </main>
 
-    <!-- Footer -->
+
     <footer class="bg-[#11111b] border-t border-[#313244]/50">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
             <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
@@ -268,23 +268,23 @@ The answer is to follow these steps.</code></pre>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+
     <a href="#header" id="back-to-top" class="text-white">
         <i data-feather="arrow-up"></i>
     </a>
 
     <script>
-        // Initialize Feather Icons
+
         feather.replace();
 
-        // --- Mobile Menu Toggle ---
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Copy to Clipboard Functionality ---
+
         function copyToClipboard(elementId, button) {
             const codeElement = document.getElementById(elementId);
             const textToCopy = codeElement.innerText;
@@ -302,7 +302,7 @@ The answer is to follow these steps.</code></pre>
             });
         }
 
-        // --- Back to Top Button Visibility ---
+
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {

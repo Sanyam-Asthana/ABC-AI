@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Engineering - ABC-AI</title>
     
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://css.gg/css?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Feather Icons for simple icons -->
+
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-        /* Custom styles from main page for consistency */
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a14; /* Dark blue-black background */
-            color: #cdd6f4; /* Softer text color */
+            background-color: #0a0a14;
+            color: #cdd6f4;
         }
         .royal-blue-gradient {
             background-image: linear-gradient(to right, #4f46e5, #2563eb);
@@ -41,8 +41,8 @@
             @apply text-white font-semibold;
         }
         pre {
-            background-color: #11111b; /* Darker code background */
-            border: 1px solid #313244; /* Subtle border */
+            background-color: #11111b;
+            border: 1px solid #313244;
             border-radius: 0.5rem;
             padding: 1rem;
             overflow-x: auto;
@@ -51,8 +51,8 @@
             position: relative;
         }
         .prompt-output {
-            background-color: #1e1e2c; /* Slightly different background for output */
-            border-left: 4px solid #89b4fa; /* Blue for output */
+            background-color: #1e1e2c;
+            border-left: 4px solid #89b4fa;
             margin-top: 0.5rem;
             padding: 1rem;
             border-radius: 0.5rem;
@@ -69,7 +69,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
+
     <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-white">
@@ -94,7 +94,7 @@
     </header>
 
     <main>
-        <!-- Engineering Page Header -->
+
         <section class="py-20 md:py-24 text-center relative overflow-hidden">
             <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
             <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -106,11 +106,11 @@
             </div>
         </section>
 
-        <!-- Techniques Section -->
+
         <section id="techniques" class="py-20 bg-[#11111b]">
             <div class="container mx-auto px-6 space-y-16">
 
-                <!-- Technique 1: Chain-of-Thought (CoT) Prompting -->
+
                 <div class="card lg:p-10">
                     <i data-feather="git-branch" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">Chain-of-Thought (CoT) Prompting</h2>
@@ -135,7 +135,7 @@ The answer is 110.</code></pre>
                     <pre class="prompt-output">By providing this detailed example, you are teaching the model a pattern. When you give it a new, similar problem, it will follow the same step-by-step reasoning process to generate an accurate answer.</pre>
                 </div>
 
-                <!-- Technique 2: Self-Consistency -->
+
                 <div class="card lg:p-10">
                     <i data-feather="copy" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">Self-Consistency</h2>
@@ -164,7 +164,7 @@ The most frequent answer is 40.</code></pre>
                     <pre class="prompt-output">The model generates several different, plausible reasoning paths. By taking the majority vote, you can be more confident in the final answer, even if one of the paths contained a minor error.</pre>
                 </div>
                 
-                <!-- Technique 3: Tree of Thoughts (ToT) -->
+
                 <div class="card lg:p-10">
                     <i data-feather="share-2" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">Tree of Thoughts (ToT)</h2>
@@ -196,7 +196,7 @@ Based on the evaluation, the writer (or the AI) chooses the most promising path 
                     <pre class="prompt-output">The model doesn't just follow one line of reasoning. It actively explores and prunes a "tree" of possibilities, leading to more robust and creative problem-solving. This is a more deliberate and comprehensive approach than a single-path CoT.</pre>
                 </div>
 
-                <!-- Technique 4: Retrieval Augmented Generation (RAG) -->
+
                 <div class="card lg:p-10">
                     <i data-feather="database" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">Retrieval Augmented Generation (RAG)</h2>
@@ -230,7 +230,7 @@ Answer:"</code></pre>
                     <pre class="prompt-output">The key features announced for the new 'Spectra' phone model include the 'Photonic Chip' for faster image processing, an extended battery life of 48 hours, and three new colors: 'Cosmic Blue', 'Starlight Silver', and 'Meteorite Gray'.</pre>
                 </div>
 
-                <!-- Technique 5: Using Delimiters -->
+
                 <div class="card lg:p-10">
                     <i data-feather="code" class="w-12 h-12 text-blue-400 mb-6"></i>
                     <h2 class="text-3xl font-bold text-white mb-4">Structuring Prompts with Delimiters</h2>
@@ -259,7 +259,7 @@ Artificial intelligence is a broad field of computer science that deals with cre
         </section>
     </main>
 
-    <!-- Footer -->
+
     <footer class="bg-[#11111b] border-t border-[#313244]/50">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
             <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
@@ -267,23 +267,23 @@ Artificial intelligence is a broad field of computer science that deals with cre
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+
     <a href="#header" id="back-to-top" class="text-white">
         <i data-feather="arrow-up"></i>
     </a>
 
     <script>
-        // Initialize Feather Icons
+
         feather.replace();
 
-        // --- Mobile Menu Toggle ---
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Copy to Clipboard Functionality ---
+
         function copyToClipboard(elementId, button) {
             const codeElement = document.getElementById(elementId);
             const textToCopy = codeElement.innerText;
@@ -301,7 +301,7 @@ Artificial intelligence is a broad field of computer science that deals with cre
             });
         }
 
-        // --- Back to Top Button Visibility ---
+
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
