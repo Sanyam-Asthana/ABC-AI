@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompting Guides</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for simple icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Custom styles from main page for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a14; /* Dark blue-black background */
+            color: #cdd6f4; /* Softer text color */
+        }
+        .royal-blue-gradient {
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        .royal-blue-text-gradient {
+             background: linear-gradient(to right, #6366f1, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            @apply bg-[#181825] p-6 rounded-xl border border-[#313244] transition-all duration-300;
+        }
+        .nav-link {
+            @apply text-slate-300 hover:text-white transition-colors duration-200;
+        }
+        /* Active nav link style */
+        .nav-link.active {
+            @apply text-white font-semibold;
+        }
+        pre {
+            background-color: #11111b; /* Darker code background */
+            border: 1px solid #313244; /* Subtle border */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            color: #cdd6f4;
+            font-size: 0.875rem;
+        }
+        .prompt-bad {
+            border-left: 4px solid #f38ba8; /* Red for bad */
+        }
+        .prompt-good {
+            border-left: 4px solid #a6e3a1; /* Green for good */
+        }
+        #back-to-top {
+            @apply hidden fixed bottom-5 right-5 p-3 rounded-full transition-all duration-300;
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        #back-to-top:hover {
+            @apply shadow-lg shadow-blue-500/50;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Assuming index.html is the homepage -->
+            <a href="index.html" class="text-2xl font-bold text-white">
+                ABC<span class="royal-blue-text-gradient">-AI</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <!-- Update links to point to the correct pages -->
+                <a href="guides.html" class="nav-link active">Guides</a>
+                <a href="examples.html" class="nav-link">Examples</a>
+                <a href="engineering.html" class="nav-link">Engineering</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+            </div>
+             <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="guides.html" class="block py-2 nav-link active">Guides</a>
+            <a href="examples.html" class="block py-2 nav-link">Examples</a>
+            <a href="engineering.html" class="block py-2 nav-link">Engineering</a>
+            <a href="tools.html" class="block py-2 nav-link">Tools</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Guides Page Header -->
+        <section class="py-20 md:py-24 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="container mx-auto px-6 relative">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Prompting Guides</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-slate-400">
+                    Learn the core principles and advanced techniques of effective prompt design to get better results from any AI model.
+                </p>
+            </div>
+        </section>
+
+        <!-- Detailed Guides Section -->
+        <section id="detailed-guides" class="py-20 bg-[#11111b]">
+            <div class="container mx-auto px-6 space-y-16">
+
+                <!-- Guide 1: The Art of the Prompt -->
+                <div class="card lg:p-10">
+                    <i data-feather="edit-3" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">1. The Art of the Prompt: Clarity & Specificity</h2>
+                    <p class="text-slate-300 text-lg mb-6">The foundation of a good response is a clear and specific prompt. Vague requests lead to generic or incorrect answers. Think of it as giving precise instructions to an assistant: the more detail they have, the better they can perform the task.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Bad Example (Vague)</h4>
+                            <pre class="prompt-bad"><code>Tell me about cars.</code></pre>
+                            <p class="text-sm text-slate-400 mt-2">This is too broad. The AI doesn't know if you want history, mechanics, a list of brands, or something else.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Good Example (Specific)</h4>
+                            <pre class="prompt-good"><code>Explain the key differences between a hybrid vehicle and a fully electric vehicle. Focus on the powertrain, refueling/recharging process, and environmental impact. Present the information in a comparison table.</code></pre>
+                             <p class="text-sm text-slate-400 mt-2">This prompt specifies the topic, the exact points to cover, and the desired output format.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 2: Define a Persona -->
+                <div class="card lg:p-10">
+                    <i data-feather="users" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">2. Define a Persona: The Power of Role-Playing</h2>
+                    <p class="text-slate-300 text-lg mb-6">Assigning a role or "persona" to the AI is a powerful technique. It frames the AI's knowledge and sets the tone, style, and expertise level of the response. This helps the AI tap into the correct domain of information.</p>
+                     <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Bad Example (No Persona)</h4>
+                            <pre class="prompt-bad"><code>Explain the marketing funnel.</code></pre>
+                            <p class="text-sm text-slate-400 mt-2">This will likely give a generic, textbook definition.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Good Example (With Persona)</h4>
+                            <pre class="prompt-good"><code>Act as a Chief Marketing Officer for a fast-growing tech startup. Explain the marketing funnel to a new intern. Use simple terms and an encouraging tone, and provide a real-world example for each stage of the funnel.</code></pre>
+                             <p class="text-sm text-slate-400 mt-2">The persona (CMO) and context (explaining to an intern) creates a much more useful and targeted response.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 3: Provide Rich Context -->
+                <div class="card lg:p-10">
+                    <i data-feather="file-text" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">3. Provide Rich Context: Give the AI What It Needs</h2>
+                    <p class="text-slate-300 text-lg mb-6">AI models don't know what you know. You must provide all relevant background information, constraints, examples, and data directly within the prompt. The more context you provide, the less the AI has to guess.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Bad Example (No Context)</h4>
+                            <pre class="prompt-bad"><code>Write an email to my team.</code></pre>
+                            <p class="text-sm text-slate-400 mt-2">The AI has no idea what the email should be about, who is on the team, or what the goal is.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Good Example (Rich Context)</h4>
+                            <pre class="prompt-good"><code>Write a professional but friendly email to my software development team. The goal is to announce a new project, "Project Phoenix". Mention that the kickoff meeting is this Friday at 10 AM via Google Meet and that the project brief is attached. My name is Sarah, the Project Manager.</code></pre>
+                             <p class="text-sm text-slate-400 mt-2">This provides all the necessary details for the AI to draft a complete and accurate email.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guide 4: Iterate and Refine -->
+                <div class="card lg:p-10">
+                    <i data-feather="refresh-cw" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">4. Iterate and Refine: The Conversation is Key</h2>
+                    <p class="text-slate-300 text-lg mb-6">Don't expect the perfect answer on the first try. Prompting is an iterative process. Use the AI's first response as a starting point and refine your prompt based on what it produced. Treat it like a conversation where you clarify and adjust your request.</p>
+                    <h4 class="font-semibold text-white mb-2 mt-6">Example Iteration Flow</h4>
+                    <div class="space-y-4">
+                        <pre class="prompt-good"><code><strong>V1:</strong> Write a poem about the moon.</code></pre>
+                        <p class="text-slate-400"><em>AI gives a generic poem. You realize you want something more specific.</em></p>
+                        <pre class="prompt-good"><code><strong>V2:</strong> That's a good start. Now, rewrite the poem from the perspective of an astronaut seeing the moon up close for the first time. Make it a four-stanza poem with an AABB rhyme scheme.</code></pre>
+                        <p class="text-slate-400"><em>AI gives a better, more targeted poem. You want to refine the tone.</em></p>
+                        <pre class="prompt-good"><code><strong>V3:</strong> Excellent. For the final version, make the tone more awe-inspired and less lonely. In the last stanza, include a line about seeing Earth in the distance.</code></pre>
+                    </div>
+                </div>
+                
+                <!-- Advanced Prompting Techniques Section -->
+                <div class="pt-16">
+                    <div class="text-center mb-16">
+                         <h1 class="text-4xl md:text-5xl font-extrabold text-white">Advanced Prompting Techniques</h1>
+                         <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-slate-400">
+                            Level up your skills by teaching the AI how to reason, learn from examples, and handle complex tasks.
+                        </p>
+                        <center class="mt-20">
+                <a href="engineering.html" class="hidden md:inline-block royal-blue-gradient text-white font-semibold px-5 py-2 rounded-lg transition-shadow hover:shadow-lg hover:shadow-blue-500/50">
+                Take Me There
+            </a>
+            </center>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a14] border-t border-[#313244]/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
+            <p class="mt-2">Designed to help you navigate the world of AI.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#header" id="back-to-top" class="text-white">
+        <i data-feather="arrow-up"></i>
+    </a>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Back to Top Button Visibility ---
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

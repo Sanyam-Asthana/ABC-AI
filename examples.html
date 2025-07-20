@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Examples - ABC-AI</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://css.gg/css?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for simple icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Custom styles from main page for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a14; /* Dark blue-black background */
+            color: #cdd6f4; /* Softer text color */
+        }
+        .royal-blue-gradient {
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        .royal-blue-text-gradient {
+             background: linear-gradient(to right, #6366f1, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            @apply text-slate-300 hover:text-white transition-colors duration-200;
+        }
+        .nav-link.active {
+            @apply text-white font-semibold;
+        }
+        pre {
+            background-color: #11111b; /* Darker code background */
+            border: 1px solid #313244; /* Subtle border */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            color: #cdd6f4;
+            font-size: 0.875rem;
+            position: relative;
+        }
+        .prompt-output {
+            background-color: #1e1e2c; /* Slightly different background for output */
+            border-left: 4px solid #89b4fa; /* Blue for output */
+            margin-top: 0.5rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            color: #bac2de;
+        }
+        #back-to-top {
+            @apply hidden fixed bottom-5 right-5 p-3 rounded-full transition-all duration-300;
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        #back-to-top:hover {
+            @apply shadow-lg shadow-blue-500/50;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">
+                ABC<span class="royal-blue-text-gradient">-AI</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="examples.html" class="nav-link active">Examples</a>
+                <a href="engineering.html" class="nav-link">Engineering</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="guides.html" class="block py-2 nav-link">Guides</a>
+            <a href="examples.html" class="block py-2 nav-link active">Examples</a>
+            <a href="engineering.html" class="block py-2 nav-link">Engineering</a>
+            <a href="tools.html" class="block py-2 nav-link">Tools</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Examples Page Header -->
+        <section class="py-20 md:py-24 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="container mx-auto px-6 relative">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Prompting by Example</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-slate-400">
+                    Explore a library of prompts for various tasks, from simple requests to advanced, multi-step reasoning.
+                </p>
+            </div>
+        </section>
+
+        <!-- Basic Prompt Examples -->
+        <section id="basic-examples" class="py-20 bg-[#11111b]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                     <h2 class="text-3xl md:text-4xl font-bold text-white">Basic Prompting Examples</h2>
+                     <p class="mt-3 text-lg text-slate-400 max-w-2xl mx-auto">Everyday use-cases that show the power of clear, direct instructions.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Creative Writing -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Creative Writing</h3>
+                        <p class="text-slate-400 mb-4">Generate a character description for a fantasy novel.</p>
+                        <div class="relative">
+                            <pre><code id="prompt1">Act as a fantasy novelist. Create a detailed character description for a mysterious rogue. Include their physical appearance, typical clothing, a unique weapon they carry, and a hint about their secretive past. The tone should be dark and intriguing.</code></pre>
+                            <button onclick="copyToClipboard('prompt1', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                        </div>
+                        <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                        <pre class="prompt-output"><code>Kaelen moves like a shadow, a whisper in the crowded streets of Blackhaven. His face, often obscured by a deep cowl, holds sharp, angular features and eyes the color of a stormy sea. He wears practical, dark leather armor, scuffed and worn from countless narrow escapes. Strapped to his back is not a sword, but a wicked-looking hand-crossbow, its wooden stock polished smooth by his grip. It's said he was once a member of the Royal Assassins, but no one dares ask if the rumors are true.</code></pre>
+                    </div>
+                    <!-- Email Drafting -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Email Drafting</h3>
+                        <p class="text-slate-400 mb-4">Draft a professional follow-up email after a job interview.</p>
+                        <div class="relative">
+                            <pre><code id="prompt2">Write a polite and professional follow-up email after a job interview. My name is Alex Chen. I interviewed for the Senior Marketing Analyst position on July 19, 2025, with Jane Miller. Reiterate my interest in the role and thank them for their time. Keep it concise and enthusiastic.</code></pre>
+                            <button onclick="copyToClipboard('prompt2', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                        </div>
+                        <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                        <pre class="prompt-output"><code>Subject: Following up on the Senior Marketing Analyst Interview
+
+Dear Ms. Miller,
+
+Thank you again for taking the time to speak with me yesterday about the Senior Marketing Analyst position. I truly enjoyed our conversation and learning more about the innovative work your team is doing.
+
+I am very enthusiastic about the opportunity to contribute to your company's success. The role aligns perfectly with my skills in data analysis and campaign strategy.
+
+I look forward to hearing from you soon.
+
+Best regards,
+
+Alex Chen</code></pre>
+                    </div>
+                     <!-- Text Summarization -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Text Summarization</h3>
+                        <p class="text-slate-400 mb-4">Summarize a complex topic into simple terms.</p>
+                        <div class="relative">
+                            <pre><code id="prompt3">Explain the concept of blockchain technology as if you were talking to a complete beginner. Use an analogy to make it easier to understand. Avoid technical jargon. The summary should be no more than three paragraphs.</code></pre>
+                            <button onclick="copyToClipboard('prompt3', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                        </div>
+                        <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                        <pre class="prompt-output"><code>Imagine a shared digital notebook that everyone can see but no one can erase. Every time someone adds a new page (a "block"), it's magically linked to the previous page, creating a chain. This notebook isn't stored in one place; instead, a copy is given to everyone in the group.
+
+Because everyone has a copy, it's incredibly secure. If someone tries to secretly change a page in their notebook, it won't match everyone else's, and their change will be rejected. This makes it almost impossible to cheat or alter the records.
+
+This shared, secure notebook is the basic idea behind blockchain. It's a way to record transactions or information in a transparent and tamper-proof way, without needing a central authority like a bank to verify everything.</code></pre>
+                    </div>
+                    <!-- Code Generation -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Code Generation</h3>
+                        <p class="text-slate-400 mb-4">Generate a JavaScript function for a common web task.</p>
+                        <div class="relative">
+                            <pre><code id="prompt4">Write a JavaScript function that takes an email address as a string and returns `true` if the email is valid and `false` otherwise. A valid email should contain one "@" symbol and at least one "." after the "@". Include comments explaining the regex used.</code></pre>
+                            <button onclick="copyToClipboard('prompt4', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                        </div>
+                        <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                        <pre class="prompt-output"><code>/**
+ * Validates an email address using a regular expression.
+ * @param {string} email The email address to validate.
+ * @returns {boolean} True if the email is valid, false otherwise.
+ */
+function isValidEmail(email) {
+  // Regular expression for basic email validation.
+  // It checks for a pattern of: [characters]@[characters].[characters]
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  // Test the email against the regex and return the result.
+  return emailRegex.test(email);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Prompting Examples -->
+        <section id="advanced-examples" class="py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                     <h2 class="text-3xl md:text-4xl font-bold text-white">Advanced Prompting Examples</h2>
+                     <p class="mt-3 text-lg text-slate-400 max-w-2xl mx-auto">Applying structured techniques to solve more complex problems.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Few-Shot for Data Formatting -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Few-Shot: Data Formatting</h3>
+                        <p class="text-slate-400 mb-4">Teach the AI to convert unstructured data into a clean JSON format.</p>
+                        <div class="relative">
+                            <pre><code id="prompt5">Extract the name and email from the text and format it as JSON.
+
+Text: "John Doe's email is john.d@email.com"
+JSON: { "name": "John Doe", "email": "john.d@email.com" }
+
+Text: "You can reach Jane Smith at jane.smith@work.net"
+JSON: { "name": "Jane Smith", "email": "jane.smith@work.net" }
+
+Text: "Contact person is David Lee (d.lee@inbox.org)"
+JSON:</code></pre>
+                            <button onclick="copyToClipboard('prompt5', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                        </div>
+                        <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                        <pre class="prompt-output"><code>{ "name": "David Lee", "email": "d.lee@inbox.org" }</code></pre>
+                    </div>
+                    <!-- Chain-of-Thought for Problem Solving -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Chain-of-Thought: Logic Puzzle</h3>
+                        <p class="text-slate-400 mb-4">Guide the AI to solve a multi-step logic problem.</p>
+                        <div class="relative">
+                            <pre><code id="prompt6">Q: I have a 5-gallon jug and a 3-gallon jug. How can I measure out exactly 4 gallons of water?
+
+A: Let's think step by step to solve this classic water jug puzzle.
+1. Fill the 5-gallon jug completely.
+2. Pour water from the 5-gallon jug into the 3-gallon jug until it's full. Now the 5-gallon jug has 2 gallons left.
+3. Empty the 3-gallon jug.
+4. Pour the 2 gallons from the 5-gallon jug into the 3-gallon jug.
+5. Fill the 5-gallon jug completely again.
+6. Carefully pour water from the 5-gallon jug into the 3-gallon jug (which already has 2 gallons) until it's full. This will take exactly 1 gallon.
+7. The 5-gallon jug now has exactly 4 gallons left.
+The answer is to follow these steps.</code></pre>
+                            <button onclick="copyToClipboard('prompt6', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                        </div>
+                        <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                        <pre class="prompt-output"><code>Here's a concise summary of the steps:
+
+    1. Fill 5-gallon jug.
+    2. Pour from 5-gallon to 3-gallon (5 has 2 gallons left).
+    3. Empty 3-gallon jug.
+    4. Pour 2 gallons from 5-gallon to 3-gallon.
+    5. Fill 5-gallon jug.
+    6. Pour from 5-gallon to 3-gallon (until 3-gallon is full - uses 1 gallon from 5-gallon).
+    7. 5-gallon jug now contains 4 gallons.</code></pre>
+                    </div>
+                     <!-- Persona with Constraints -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Persona with Constraints: Socratic Tutor</h3>
+                        <p class="text-slate-400 mb-4">Create an AI tutor that guides the user to the answer instead of giving it directly.</p>
+                        <div class="relative">
+                            <pre><code id="prompt7">Act as a Socratic tutor. Your goal is to help me understand a topic by asking me questions, not by giving me direct answers. Never give the final answer. Start by asking me what topic I want to explore.</code></pre>
+                            <button onclick="copyToClipboard('prompt7', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                        </div>
+                        <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                        <pre class="prompt-output"><code>Of course. I will help you learn through inquiry and exploration. To begin, what topic is on your mind today?</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#11111b] border-t border-[#313244]/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
+            <p class="mt-2">Designed to help you navigate the world of AI.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#header" id="back-to-top" class="text-white">
+        <i data-feather="arrow-up"></i>
+    </a>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Copy to Clipboard Functionality ---
+        function copyToClipboard(elementId, button) {
+            const codeElement = document.getElementById(elementId);
+            const textToCopy = codeElement.innerText;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalContent = button.innerHTML;
+                button.innerHTML = '<i data-feather="check" class="w-5 h-5 text-green-400"></i>';
+                feather.replace();
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    feather.replace();
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // --- Back to Top Button Visibility ---
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

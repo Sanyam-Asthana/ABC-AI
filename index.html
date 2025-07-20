@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC-AI - Your AI Helping Hub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for simple icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a14; /* Dark blue-black background */
+            color: #cdd6f4; /* Softer text color */
+        }
+        .royal-blue-gradient {
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        .royal-blue-text-gradient {
+             background: linear-gradient(to right, #6366f1, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Style for the code blocks */
+        pre {
+            background-color: #11111b; /* Darker code background */
+            border: 1px solid #313244; /* Subtle border */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            color: #cdd6f4;
+            font-size: 0.875rem;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center text-white mb-12;
+        }
+        .card {
+            @apply bg-[#181825] p-6 rounded-xl border border-[#313244] hover:border-blue-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/20;
+        }
+        .nav-link {
+            @apply text-slate-300 hover:text-white transition-colors duration-200;
+        }
+        #back-to-top {
+            @apply hidden fixed bottom-5 right-5 p-3 rounded-full transition-all duration-300;
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        #back-to-top:hover {
+            @apply shadow-lg shadow-blue-500/50;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-white">
+                ABC<span class="royal-blue-text-gradient">-AI</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="examples.html" class="nav-link">Examples</a>
+                <a href="engineering.html" class="nav-link">Engineering</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+            </div>
+            <a href="#tools" class="hidden md:inline-block royal-blue-gradient text-white font-semibold px-5 py-2 rounded-lg transition-shadow hover:shadow-lg hover:shadow-blue-500/50">
+                Explore Tools
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#guides" class="block py-2 nav-link">Guides</a>
+            <a href="#examples" class="block py-2 nav-link">Examples</a>
+            <a href="#engineering" class="block py-2 nav-link">Engineering</a>
+            <a href="#tools" class="block py-2 nav-link">Tools</a>
+            <a href="#tools" class="block mt-2 royal-blue-gradient text-white font-semibold text-center py-2 rounded-lg">Explore Tools</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="py-20 md:py-32 relative overflow-hidden">
+             <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+             <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+             <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
+            <div class="container mx-auto px-6 text-center relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    Anybody can <span class="royal-blue-text-gradient">AI</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-slate-400">
+                    Your central hub for everything AI. From beginner guides to advanced techniques and tools, ABC-AI serves as a complete resource.
+                </p>
+                <div class="mt-10">
+                    <a href="#guides" class="royal-blue-gradient text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50">
+                        Start Learning
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prompting Guides Section -->
+        <section id="guides" class="py-20 bg-[#11111b]">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Beginner's Prompting Guides</h2>
+                <br>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Guide 1 -->
+                    <div class="card">
+                        <i data-feather="edit-3" class="w-10 h-10 text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">The Art of the Prompt</h3>
+                        <p class="text-slate-400">Learn to write clear, concise, and effective prompts. Be specific, provide context, and state your desired format.</p>
+                    </div>
+                    <!-- Guide 2 -->
+                    <div class="card">
+                        <i data-feather="users" class="w-10 h-10 text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Define a Persona</h3>
+                        <p class="text-slate-400">Assign the AI a role (e.g., "You are a senior software developer") to frame its knowledge and response style.</p>
+                    </div>
+                    <!-- Guide 3 -->
+                    <div class="card">
+                        <i data-feather="file-text" class="w-10 h-10 text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Provide Rich Context</h3>
+                        <p class="text-slate-400">Give the AI background info, examples, and constraints. The more it knows, the better its output will be.</p>
+                    </div>
+                     <!-- Guide 4 -->
+                    <div class="card">
+                        <i data-feather="refresh-cw" class="w-10 h-10 text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Iterate and Refine</h3>
+                        <p class="text-slate-400">Your first prompt isn't always your last. Refine your request based on the AI's output to zero in on the perfect result.</p>
+                    </div>
+                </div>
+            </div>
+            <center class="mt-20">
+                <a href="guides.html" class="hidden md:inline-block royal-blue-gradient text-white font-semibold px-5 py-2 rounded-lg transition-shadow hover:shadow-lg hover:shadow-blue-500/50">
+                Know More
+            </a>
+            </center>
+        </section>
+
+        <!-- Prompting Examples Section -->
+        <section id="examples" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Practical Prompt Examples</h2>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Example 1: Creative Writing -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Creative Writing Assistant</h3>
+                        <p class="text-slate-400 mb-4">Generate a short story opening.</p>
+                        <div class="relative">
+                            <pre><code id="prompt1">Act as a world-class science fiction author. Write a compelling opening paragraph for a mystery story set in a neon-lit, rain-slicked city on Mars in 2242. The main character is a grizzled private detective. Start with the atmosphere.</code></pre>
+                            <button onclick="copyToClipboard('prompt1', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300">
+                                <i data-feather="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Example 2: Coding -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Python Code Generator</h3>
+                        <p class="text-slate-400 mb-4">Create a Python function to fetch data from an API.</p>
+                        <div class="relative">
+                            <pre><code id="prompt2">As a senior Python developer, write a function `fetch_user_data(user_id)` that takes a `user_id`. It should make a GET request to `https://api.example.com/users/{user_id}`, handle 404 and other HTTP errors gracefully, and return the user data as a JSON object. Include docstrings and type hints.</code></pre>
+                            <button onclick="copyToClipboard('prompt2', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300">
+                                <i data-feather="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                     <!-- Example 3: Marketing Copy -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Marketing Copywriter</h3>
+                        <p class="text-slate-400 mb-4">Generate ad copy for a new product.</p>
+                        <div class="relative">
+                            <pre><code id="prompt5">You are an expert direct response copywriter. Write three catchy headlines for a new productivity app called 'Zenith' that helps users focus. The target audience is busy professionals. The tone should be inspiring and benefit-driven.</code></pre>
+                            <button onclick="copyToClipboard('prompt5', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300">
+                                <i data-feather="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Example 4: Summarization -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Text Summarizer</h3>
+                        <p class="text-slate-400 mb-4">Summarize a long article into key points.</p>
+                        <div class="relative">
+                            <pre><code id="prompt6">Summarize the following article into five clear and concise bullet points. Focus on the main arguments and conclusions.
+
+[Paste article text here]</code></pre>
+                            <button onclick="copyToClipboard('prompt6', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300">
+                                <i data-feather="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center class="mt-20">
+                <a href="examples.html" class="hidden md:inline-block royal-blue-gradient text-white font-semibold px-5 py-2 rounded-lg transition-shadow hover:shadow-lg hover:shadow-blue-500/50">
+                See More Examples
+            </a>
+            </center>
+        </section>
+
+        <!-- Prompt Engineering Section -->
+        <section id="engineering" class="py-20 bg-[#11111b]">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Advanced Prompt Engineering</h2>
+                <div class="grid lg:grid-cols-3 gap-8 items-start">
+                    <!-- Few-Shot Prompting -->
+                    <div class="card">
+                        <h3 class="text-2xl font-bold text-white mb-4">Few-Shot Prompting</h3>
+                        <p class="text-slate-400 mb-4">Guide the AI by providing a few examples of the input-output format you want. This helps it understand the task better than a zero-shot (no examples) prompt.</p>
+                        <div class="relative mt-auto">
+                            <pre><code id="prompt3">Translate English to French:
+sea otter => loutre de mer
+peppermint => menthe poivrée
+cheese =></code></pre>
+                            <button onclick="copyToClipboard('prompt3', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300">
+                                <i data-feather="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Chain-of-Thought Prompting -->
+                    <div class="card">
+                        <h3 class="text-2xl font-bold text-white mb-4">Chain-of-Thought (CoT)</h3>
+                        <p class="text-slate-400 mb-4">Encourage the AI to "think step by step" to solve complex problems, leading to more accurate and reasoned answers.</p>
+                        <div class="relative mt-auto">
+                            <pre><code id="prompt4">Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3. How many does he have now?
+
+A: Let's break this down step-by-step:
+1. Roger starts with 5 balls.
+2. He buys 2 cans * 3 balls/can = 6 new balls.
+3. Total balls = 5 + 6 = 11.
+The answer is 11.</code></pre>
+                            <button onclick="copyToClipboard('prompt4', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300">
+                                <i data-feather="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Self-Consistency -->
+                    <div class="card">
+                        <h3 class="text-2xl font-bold text-white mb-4">Self-Consistency</h3>
+                        <p class="text-slate-400 mb-4">Generate multiple Chain-of-Thought responses for a complex question and choose the most common answer to improve accuracy and reliability.</p>
+                        <div class="relative mt-auto">
+                            <pre><code id="prompt7">Prompt the AI with the same CoT question multiple times. If 3/4 responses give the answer '11' and 1/4 gives '10', you can be more confident that '11' is the correct answer. This mitigates occasional reasoning errors.</code></pre>
+                            <button onclick="copyToClipboard('prompt7', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300">
+                                <i data-feather="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tools Section -->
+        <section id="tools" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Curated AI Tools</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tool 1 -->
+                    <div class="card flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2">Google AI Studio</h3>
+                        <p class="text-slate-400 flex-grow">Directly access and experiment with powerful models like Gemini 2.5 Pro for a wide range of applications.</p>
+                        <a href="https://aistudio.google.com" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                            Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <!-- Tool 2 -->
+                    <div class="card flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2">Midjourney</h3>
+                        <p class="text-slate-400 flex-grow">A premier AI image generator known for creating artistic and high-quality visuals from text prompts.</p>
+                        <a href="https://www.midjourney.com/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                            Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <!-- Tool 3 -->
+                    <div class="card flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2">Perplexity AI</h3>
+                        <p class="text-slate-400 flex-grow">A conversational search engine that provides direct answers with cited sources, blending search with LLMs.</p>
+                        <a href="https://www.perplexity.ai/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                            Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                     <!-- Tool 4 -->
+                    <div class="card flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2">Hugging Face</h3>
+                        <p class="text-slate-400 flex-grow">The leading open-source community and platform for AI. Find models, datasets, and tools.</p>
+                        <a href="https://huggingface.co/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                            Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                     <!-- Tool 5 -->
+                    <div class="card flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2">ElevenLabs</h3>
+                        <p class="text-slate-400 flex-grow">Generate high-quality, natural-sounding speech and voiceovers from text in multiple languages.</p>
+                        <a href="https://elevenlabs.io/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                            Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                     <!-- Tool 6 -->
+                    <div class="card flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2">Notion AI</h3>
+                        <p class="text-slate-400 flex-grow">An AI writing assistant integrated directly into the Notion workspace to summarize, write, and brainstorm.</p>
+                        <a href="https://www.notion.so/product/ai" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                            Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <center class="mt-20">
+                <a href="tools.html" class="hidden md:inline-block royal-blue-gradient text-white font-semibold px-5 py-2 rounded-lg transition-shadow hover:shadow-lg hover:shadow-blue-500/50">
+                Explore More Tools
+            </a>
+            </center>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#11111b] border-t border-[#313244]/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
+            <p class="mt-2">Designed to help you navigate the world of AI.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" class="text-white">
+        <i data-feather="arrow-up"></i>
+    </a>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Copy to Clipboard Functionality ---
+        function copyToClipboard(elementId, button) {
+            const codeElement = document.getElementById(elementId);
+            let textToCopy = codeElement.innerText;
+            
+            // A simple way to handle the "Paste article here" part
+            if (textToCopy.includes('[Paste article text here]')) {
+                textToCopy = textToCopy.replace('[Paste article text here]', '...');
+            }
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalContent = button.innerHTML;
+                button.innerHTML = '<i data-feather="check" class="w-5 h-5 text-green-400"></i>';
+                feather.replace();
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    feather.replace();
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // --- Back to Top Button Visibility ---
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

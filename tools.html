@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools - ABC-AI</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for simple icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Custom styles from main page for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a14; /* Dark blue-black background */
+            color: #cdd6f4; /* Softer text color */
+        }
+        .royal-blue-gradient {
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        .royal-blue-text-gradient {
+             background: linear-gradient(to right, #6366f1, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            @apply bg-[#181825] p-6 rounded-xl border border-[#313244] hover:border-blue-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/20;
+        }
+        .nav-link {
+            @apply text-slate-300 hover:text-white transition-colors duration-200;
+        }
+        /* Active nav link style */
+        .nav-link.active {
+            @apply text-white font-semibold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Link this back to your main page, assuming it's index.html -->
+            <a href="index.html" class="text-2xl font-bold text-white">
+                ABC<span class="royal-blue-text-gradient">-AI</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="examples.html" class="nav-link">Examples</a>
+                <a href="engineering.html" class="nav-link">Engineering</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+            </div>
+             <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="guides.html" class="block py-2 nav-link">Guides</a>
+            <a href="examples.html" class="block py-2 nav-link">Examples</a>
+            <a href="engineering.html" class="block py-2 nav-link">Engineering</a>
+            <a href="tools.html" class="block py-2 nav-link active">Tools</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Tools Page Header -->
+        <section class="py-20 md:py-24 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="container mx-auto px-6 relative">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Curated AI Tools</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-slate-400">
+                    Discover the best AI tools for creativity, productivity, and development.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="py-8 bg-[#11111b]">
+            <div class="container mx-auto px-6">
+                <div class="relative max-w-2xl mx-auto">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4">
+                        <i data-feather="search" class="w-5 h-5 text-slate-500"></i>
+                    </span>
+                    <input type="search" id="tool-search" placeholder="Search for tools..." class="w-full py-3 pl-12 pr-4 bg-[#181825] border border-[#313244] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section id="tools-grid" class="py-20">
+            <div class="container mx-auto px-6">
+
+                <!-- Category: LLM & Chat -->
+                <div class="mb-16 tool-category">
+                    <h2 class="text-2xl font-bold text-white mb-6">Large Language Models & Chat</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tool-list">
+                        <div class="card flex flex-col tool-item" data-name="OpenAI Playground GPT-4" data-description="Directly access and experiment with powerful models like GPT-4 for a wide range of applications.">
+                            <h3 class="text-xl font-bold text-white mb-2">OpenAI Playground</h3>
+                            <p class="text-slate-400 flex-grow">Directly access and experiment with powerful models like GPT-4 for a wide range of applications.</p>
+                            <a href="https://platform.openai.com/playground" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                        <div class="card flex flex-col tool-item" data-name="Perplexity AI" data-description="A conversational search engine that provides direct answers with cited sources, blending search with LLMs.">
+                            <h3 class="text-xl font-bold text-white mb-2">Perplexity AI</h3>
+                            <p class="text-slate-400 flex-grow">A conversational search engine that provides direct answers with cited sources, blending search with LLMs.</p>
+                            <a href="https://www.perplexity.ai/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                        <div class="card flex flex-col tool-item" data-name="Google Gemini" data-description="Google's next-generation multimodal AI model, capable of understanding and operating across text, images, code, and more.">
+                            <h3 class="text-xl font-bold text-white mb-2">Google Gemini</h3>
+                            <p class="text-slate-400 flex-grow">Google's next-generation multimodal AI model, capable of understanding and operating across text, images, code, and more.</p>
+                            <a href="https://gemini.google.com/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Image & Video Generation -->
+                <div class="mb-16 tool-category">
+                    <h2 class="text-2xl font-bold text-white mb-6">Image & Video Generation</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tool-list">
+                         <div class="card flex flex-col tool-item" data-name="Midjourney" data-description="A premier AI image generator known for creating artistic and high-quality visuals from text prompts.">
+                            <h3 class="text-xl font-bold text-white mb-2">Midjourney</h3>
+                            <p class="text-slate-400 flex-grow">A premier AI image generator known for creating artistic and high-quality visuals from text prompts.</p>
+                            <a href="https://www.midjourney.com/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                        <div class="card flex flex-col tool-item" data-name="Stable Diffusion" data-description="A powerful, open-source text-to-image model that allows for a high degree of customization and control.">
+                            <h3 class="text-xl font-bold text-white mb-2">Stable Diffusion</h3>
+                            <p class="text-slate-400 flex-grow">A powerful, open-source text-to-image model that allows for a high degree of customization and control.</p>
+                            <a href="https://stablediffusionweb.com/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                        <div class="card flex flex-col tool-item" data-name="Runway ML" data-description="An all-in-one content creation suite with AI magic tools, including text-to-video, video editing, and more.">
+                            <h3 class="text-xl font-bold text-white mb-2">Runway ML</h3>
+                            <p class="text-slate-400 flex-grow">An all-in-one content creation suite with AI magic tools, including text-to-video, video editing, and more.</p>
+                            <a href="https://runwayml.com/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Productivity & Writing -->
+                <div class="mb-16 tool-category">
+                    <h2 class="text-2xl font-bold text-white mb-6">Productivity & Writing</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tool-list">
+                        <div class="card flex flex-col tool-item" data-name="Notion AI" data-description="An AI writing assistant integrated directly into the Notion workspace to summarize, write, and brainstorm.">
+                            <h3 class="text-xl font-bold text-white mb-2">Notion AI</h3>
+                            <p class="text-slate-400 flex-grow">An AI writing assistant integrated directly into the Notion workspace to summarize, write, and brainstorm.</p>
+                            <a href="https://www.notion.so/product/ai" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                        <div class="card flex flex-col tool-item" data-name="Grammarly" data-description="More than a grammar checker, Grammarly's AI helps improve writing style, tone, and clarity.">
+                            <h3 class="text-xl font-bold text-white mb-2">Grammarly</h3>
+                            <p class="text-slate-400 flex-grow">More than a grammar checker, Grammarly's AI helps improve writing style, tone, and clarity.</p>
+                            <a href="https://www.grammarly.com/" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                        <div class="card flex flex-col tool-item" data-name="GitHub Copilot" data-description="An AI pair programmer that suggests code and entire functions in real-time, right from your editor.">
+                            <h3 class="text-xl font-bold text-white mb-2">GitHub Copilot</h3>
+                            <p class="text-slate-400 flex-grow">An AI pair programmer that suggests code and entire functions in real-time, right from your editor.</p>
+                            <a href="https://github.com/features/copilot" target="_blank" class="mt-4 text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">Visit Site <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- No Results Message -->
+                <div id="no-results" class="hidden text-center py-10">
+                    <h3 class="text-2xl font-bold text-white">No tools found</h3>
+                    <p class="text-slate-400 mt-2">Try adjusting your search term.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#11111b] border-t border-[#313244]/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
+            <p class="mt-2">Designed to help you navigate the world of AI.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Real-time Search Functionality ---
+        const searchInput = document.getElementById('tool-search');
+        const toolItems = document.querySelectorAll('.tool-item');
+        const toolCategories = document.querySelectorAll('.tool-category');
+        const noResultsMessage = document.getElementById('no-results');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            let anyVisible = false;
+
+            toolCategories.forEach(category => {
+                let categoryVisible = false;
+                const toolsInCateogry = category.querySelectorAll('.tool-item');
+
+                toolsInCateogry.forEach(item => {
+                    const name = item.dataset.name.toLowerCase();
+                    const description = item.dataset.description.toLowerCase();
+                    
+                    if (name.includes(searchTerm) || description.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                        categoryVisible = true;
+                        anyVisible = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                if (categoryVisible) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+
+            if (anyVisible) {
+                noResultsMessage.classList.add('hidden');
+            } else {
+                noResultsMessage.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

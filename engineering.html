@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering - ABC-AI</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://css.gg/css?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for simple icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Custom styles from main page for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a14; /* Dark blue-black background */
+            color: #cdd6f4; /* Softer text color */
+        }
+        .royal-blue-gradient {
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        .royal-blue-text-gradient {
+             background: linear-gradient(to right, #6366f1, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            @apply bg-[#181825] p-6 rounded-xl border border-[#313244] transition-all duration-300;
+        }
+        .nav-link {
+            @apply text-slate-300 hover:text-white transition-colors duration-200;
+        }
+        .nav-link.active {
+            @apply text-white font-semibold;
+        }
+        pre {
+            background-color: #11111b; /* Darker code background */
+            border: 1px solid #313244; /* Subtle border */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            color: #cdd6f4;
+            font-size: 0.875rem;
+            position: relative;
+        }
+        .prompt-output {
+            background-color: #1e1e2c; /* Slightly different background for output */
+            border-left: 4px solid #89b4fa; /* Blue for output */
+            margin-top: 0.5rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            color: #bac2de;
+        }
+        #back-to-top {
+            @apply hidden fixed bottom-5 right-5 p-3 rounded-full transition-all duration-300;
+            background-image: linear-gradient(to right, #4f46e5, #2563eb);
+        }
+        #back-to-top:hover {
+            @apply shadow-lg shadow-blue-500/50;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-[#0a0a14]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[#313244]/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">
+                ABC<span class="royal-blue-text-gradient">-AI</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="examples.html" class="nav-link">Examples</a>
+                <a href="engineering.html" class="nav-link active">Engineering</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="guides.html" class="block py-2 nav-link">Guides</a>
+            <a href="examples.html" class="block py-2 nav-link">Examples</a>
+            <a href="engineering.html" class="block py-2 nav-link active">Engineering</a>
+            <a href="tools.html" class="block py-2 nav-link">Tools</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Engineering Page Header -->
+        <section class="py-20 md:py-24 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="container mx-auto px-6 relative">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Advanced Prompt Engineering</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-slate-400">
+                    Go beyond basic prompts. Learn structured techniques to build reliable, accurate, and complex AI-powered systems.
+                </p>
+            </div>
+        </section>
+
+        <!-- Techniques Section -->
+        <section id="techniques" class="py-20 bg-[#11111b]">
+            <div class="container mx-auto px-6 space-y-16">
+
+                <!-- Technique 1: Chain-of-Thought (CoT) Prompting -->
+                <div class="card lg:p-10">
+                    <i data-feather="git-branch" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">Chain-of-Thought (CoT) Prompting</h2>
+                    <p class="text-slate-300 text-lg mb-6">CoT prompting guides the AI to break down a multi-step problem into a series of intermediate reasoning steps. Instead of jumping to a conclusion, the model "thinks out loud," which significantly improves its performance on complex arithmetic, commonsense, and symbolic reasoning tasks.</p>
+                    <h4 class="font-semibold text-white mb-2">When to Use:</h4>
+                    <ul class="list-disc list-inside text-slate-400 mb-6">
+                        <li>Math word problems.</li>
+                        <li>Multi-step logic puzzles.</li>
+                        <li>Any task where the final answer depends on a sequence of correct intermediate steps.</li>
+                    </ul>
+                    <div class="relative">
+                        <pre><code id="prompt-cot">Q: A farmer has 15 cows and 25 chickens. How many legs are there in total on the farm?
+
+A: Let's break this down step by step.
+1. First, calculate the number of cow legs. Cows have 4 legs each. So, 15 cows * 4 legs/cow = 60 legs.
+2. Next, calculate the number of chicken legs. Chickens have 2 legs each. So, 25 chickens * 2 legs/chicken = 50 legs.
+3. Finally, add the total legs together. 60 cow legs + 50 chicken legs = 110 legs.
+The answer is 110.</code></pre>
+                        <button onclick="copyToClipboard('prompt-cot', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                    </div>
+                    <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Behavior</h4>
+                    <pre class="prompt-output">By providing this detailed example, you are teaching the model a pattern. When you give it a new, similar problem, it will follow the same step-by-step reasoning process to generate an accurate answer.</pre>
+                </div>
+
+                <!-- Technique 2: Self-Consistency -->
+                <div class="card lg:p-10">
+                    <i data-feather="copy" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">Self-Consistency</h2>
+                    <p class="text-slate-300 text-lg mb-6">This technique builds on Chain-of-Thought. Instead of generating just one reasoning path, you prompt the model multiple times with the same question (using a higher temperature for variability). You then select the most common answer from the different reasoning paths. This democratic approach helps to marginalize reasoning errors and improves accuracy on complex tasks.</p>
+                    <h4 class="font-semibold text-white mb-2">When to Use:</h4>
+                    <ul class="list-disc list-inside text-slate-400 mb-6">
+                        <li>High-stakes reasoning tasks where accuracy is paramount.</li>
+                        <li>Arithmetic and commonsense reasoning problems.</li>
+                    </ul>
+                     <div class="relative">
+                        <pre><code id="prompt-sc"># Step 1: Prompt the AI with a CoT question multiple times.
+
+Prompt: "Q: There are 15 trees in the grove. Grove workers will plant trees daily. After 1 day, they have 20 trees. After 2 days, they have 25 trees. How many trees will they have after 5 days?"
+
+# Step 2: Analyze the multiple outputs.
+
+Output 1: ...They add 5 trees per day. After 5 days, they will have 15 + 5*5 = 40 trees.
+Output 2: ...The pattern is +5 trees each day. Day 3: 30, Day 4: 35, Day 5: 40. The answer is 40.
+Output 3: ...The increase is 5 trees. 15 + (5*5) = 40. The answer is 40.
+
+# Step 3: Select the most common answer.
+The most frequent answer is 40.</code></pre>
+                        <button onclick="copyToClipboard('prompt-sc', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                    </div>
+                    <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Behavior</h4>
+                    <pre class="prompt-output">The model generates several different, plausible reasoning paths. By taking the majority vote, you can be more confident in the final answer, even if one of the paths contained a minor error.</pre>
+                </div>
+                
+                <!-- Technique 3: Tree of Thoughts (ToT) -->
+                <div class="card lg:p-10">
+                    <i data-feather="share-2" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">Tree of Thoughts (ToT)</h2>
+                    <p class="text-slate-300 text-lg mb-6">Tree of Thoughts extends Chain-of-Thought by allowing the model to explore multiple reasoning paths at once, like branches on a tree. At each step, the model can generate several different "thoughts" or next steps, and then evaluate them to decide which path is most promising to continue exploring. This is much more powerful than a single CoT path for problems that require exploration or strategic planning.</p>
+                    <h4 class="font-semibold text-white mb-2">When to Use:</h4>
+                    <ul class="list-disc list-inside text-slate-400 mb-6">
+                        <li>Creative writing tasks where multiple plot points could be explored.</li>
+                        <li>Strategic games like chess or Go.</li>
+                        <li>Problems with no single, obvious path to a solution.</li>
+                    </ul>
+                     <div class="relative">
+                        <pre><code id="prompt-tot"># This is a conceptual example, as a true ToT system requires more complex code.
+
+Initial Prompt: "I have a character, a detective, at a crime scene. The victim was poisoned. What are three different ways the detective could start the investigation?"
+
+Step 1: Generate Thoughts
+Thought 1: Interview the family immediately.
+Thought 2: Analyze the poison to identify its origin.
+Thought 3: Search the victim's office for enemies or clues.
+
+Step 2: Evaluate Thoughts
+Prompt: "Evaluate the pros and cons of these three starting points for a mystery novel."
+
+Step 3: Select and Expand
+Based on the evaluation, the writer (or the AI) chooses the most promising path (e.g., Thought 2) and generates further thoughts from there.</code></pre>
+                        <button onclick="copyToClipboard('prompt-tot', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                    </div>
+                    <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Behavior</h4>
+                    <pre class="prompt-output">The model doesn't just follow one line of reasoning. It actively explores and prunes a "tree" of possibilities, leading to more robust and creative problem-solving. This is a more deliberate and comprehensive approach than a single-path CoT.</pre>
+                </div>
+
+                <!-- Technique 4: Retrieval Augmented Generation (RAG) -->
+                <div class="card lg:p-10">
+                    <i data-feather="database" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">Retrieval Augmented Generation (RAG)</h2>
+                    <p class="text-slate-300 text-lg mb-6">RAG enhances LLMs by grounding them in external knowledge. Before answering a prompt, the system retrieves relevant information from a specified knowledge base (like a company's internal documents, a textbook, or a set of recent articles). This retrieved context is then provided to the LLM along with the original question, allowing it to generate answers that are more accurate, up-to-date, and verifiable.</p>
+                    <h4 class="font-semibold text-white mb-2">When to Use:</h4>
+                    <ul class="list-disc list-inside text-slate-400 mb-6">
+                        <li>Building question-answering systems over private documents.</li>
+                        <li>Reducing factual hallucinations and providing citations.</li>
+                        <li>Answering questions about recent events not in the model's training data.</li>
+                    </ul>
+                     <div class="relative">
+                        <pre><code id="prompt-rag"># This is a conceptual example of the final prompt sent to the LLM.
+
+Original Question: "What were the key features announced for the new 'Spectra' phone model?"
+
+--- Retrieved Context from internal documents ---
+Document 1: The 'Spectra' features a new 'Photonic Chip' for 50% faster image processing.
+Document 2: The battery life of the 'Spectra' has been extended to 48 hours of typical use.
+Document 3: The 'Spectra' will be available in three new colors: 'Cosmic Blue', 'Starlight Silver', and 'Meteorite Gray'.
+---
+
+Final Prompt to LLM:
+"Based on the following context, what were the key features announced for the new 'Spectra' phone model?
+
+Context: [Paste Retrieved Context here]
+
+Answer:"</code></pre>
+                        <button onclick="copyToClipboard('prompt-rag', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                    </div>
+                    <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                    <pre class="prompt-output">The key features announced for the new 'Spectra' phone model include the 'Photonic Chip' for faster image processing, an extended battery life of 48 hours, and three new colors: 'Cosmic Blue', 'Starlight Silver', and 'Meteorite Gray'.</pre>
+                </div>
+
+                <!-- Technique 5: Using Delimiters -->
+                <div class="card lg:p-10">
+                    <i data-feather="code" class="w-12 h-12 text-blue-400 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-white mb-4">Structuring Prompts with Delimiters</h2>
+                    <p class="text-slate-300 text-lg mb-6">Clearly separating different parts of your prompt is crucial for avoiding ambiguity. Delimiters, such as triple backticks (```), XML tags (&lt;tag&gt;&lt;/tag&gt;), or even simple markers like `###`, help the model distinguish between instructions, context, examples, and user input. This simple trick can significantly improve the reliability of your prompts.</p>
+                    <h4 class="font-semibold text-white mb-2">When to Use:</h4>
+                    <ul class="list-disc list-inside text-slate-400 mb-6">
+                        <li>In almost all complex prompts.</li>
+                        <li>When providing text for the model to summarize, analyze, or transform.</li>
+                        <li>When building prompts programmatically that include user input, to prevent prompt injection.</li>
+                    </ul>
+                     <div class="relative">
+                        <pre><code id="prompt-delimiters">### INSTRUCTIONS ###
+Summarize the text provided in the "TEXT TO SUMMARIZE" section into a single, concise sentence.
+
+### TEXT TO SUMMARIZE ###
+Artificial intelligence is a broad field of computer science that deals with creating machines that can perform tasks that typically require human intelligence. This includes learning, reasoning, problem-solving, perception, and language understanding. The field has many sub-fields, including machine learning, natural language processing, and computer vision.
+
+### SUMMARY ###</code></pre>
+                        <button onclick="copyToClipboard('prompt-delimiters', this)" class="absolute top-2 right-2 bg-slate-700/50 hover:bg-slate-600/50 p-2 rounded-lg text-slate-300"><i data-feather="copy" class="w-5 h-5"></i></button>
+                    </div>
+                    <h4 class="font-semibold text-white mt-4 mb-2 flex items-center"><i data-feather="cpu" class="w-5 h-5 mr-2 text-blue-400"></i>Expected AI Output</h4>
+                    <pre class="prompt-output">Artificial intelligence is a field of computer science focused on creating intelligent machines that can learn, reason, and solve problems like humans.</pre>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#11111b] border-t border-[#313244]/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 ABC-AI. All Rights Reserved.</p>
+            <p class="mt-2">Designed to help you navigate the world of AI.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#header" id="back-to-top" class="text-white">
+        <i data-feather="arrow-up"></i>
+    </a>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Copy to Clipboard Functionality ---
+        function copyToClipboard(elementId, button) {
+            const codeElement = document.getElementById(elementId);
+            const textToCopy = codeElement.innerText;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalContent = button.innerHTML;
+                button.innerHTML = '<i data-feather="check" class="w-5 h-5 text-green-400"></i>';
+                feather.replace();
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    feather.replace();
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // --- Back to Top Button Visibility ---
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
